@@ -6,7 +6,7 @@
 /*   By: mohamed-doudi-baltit <mohamed-doudi-bal    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:22:03 by mohamed-dou       #+#    #+#             */
-/*   Updated: 2024/10/10 21:15:15 by mohamed-dou      ###   ########.fr       */
+/*   Updated: 2024/10/24 00:11:55 by mohamed-dou      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ char *my_strtok(char *str, const char *delim)
     }
     return token;
 }
-
 
 int main() {
     char str[] = "ls -l || grep .c > output.txt";

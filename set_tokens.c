@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   set_tokens.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohamed-doudi-baltit <mohamed-doudi-bal    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 19:11:58 by mohamed-dou       #+#    #+#             */
-/*   Updated: 2024/10/23 23:21:18 by mohamed-dou      ###   ########.fr       */
+/*   Updated: 2024/10/24 00:08:47 by mohamed-dou      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,16 @@ t_token *set_tokens(char *line, t_msh *msh)
                 set_lower_token(line, &i, &tokens);
         else if (line[i] == '>')
                 set_greather_token(line, &i, &tokens);
-        
-            
-            
-    }
+        else if (line[i] == '|')
+                set_pipe_token(line, &i, &tokens);
+        else if (line[i] == '\'')
+                set_quote_token(line, &i, &tokens);
+        else if (line[i] == '\"')
+                set_doble_quote_token(line, &i, &tokens);
+        else if (line[i] == ' ' || line[i] == '\n')
+                i++;
+    } 
+    return (tokens);
 }
 int     check_pipes(t_msh *msh, t_token *token, int *flag)
 {

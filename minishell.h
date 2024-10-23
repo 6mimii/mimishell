@@ -8,6 +8,8 @@
 
 #define     UNEXPECTED_TOK "sintax error near unexpected token"
 #define     UNEXPECTED_EOF "syntax error unexpected end of file"
+#define     WRONG_Q "unexpected EOF while looking for matching `''"
+#define     WRONG_DQ "unexpected EOF while looking for matching `\"'"
 
 typedef enum e_token_type
 {
@@ -32,9 +34,9 @@ typedef struct s_token
 
 typedef struct s_msh
 {
-    struct s_token  *tokens;  
+    struct s_token  *tokens;
     char            *line;
-    
+    int             parse_error;
 }       t_msh;
 
 #endif
